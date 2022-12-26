@@ -1,0 +1,18 @@
+[ ] Register a user
+[ ] Login a user
+[ ] who am i 
+[ ] logout
+
+[ ] add new product
+[ ] update new product
+[ ] delete a product 
+
+[ ] get all products
+[ ] get a single product 
+
+install packages
+    npm install express
+    npm install esm    ==>  [esm ka use krk apn javascipt es6 ka syntax use kr skte hai alag se require likhne ki need nahi hai apn import export use kr skte hai ab. ]
+    npm i nodemon -D
+    npm i dotenv    ==> (secrets chiz ko iske under rkhne ke liye)
+    npm i multer

@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "26de98b9-fa32-4582-b693-8decbe7b290e",
+		"name": "rest-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13552774"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sunidhi mishra\",\r\n    \"email\": \"sunidhi@gmail.com\",\r\n    \"password\": \"secret\",\r\n    \"confirm_password\": \"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mukesh@gmail.com\",\r\n    \"password\": \"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Who am i",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E1NGZlMzJlMDQ2NTJmOWI4MjZlYzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2NzE3Nzg0MzksImV4cCI6MTY3MTc3ODQ5OX0.GlAnJUBYCF27rOz7ZJTkxKGus_WS7pidZI5U3B-x4LA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/me?Authorization",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"me"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E1NGZlMzJlMDQ2NTJmOWI4MjZlYzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2NzE3Nzg1NDEsImV4cCI6MTcwMzMzNjE0MX0.dVJFoflObG9AbLjwn76i1AQW4EmZriz8G3P4MjAQICo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/refresh",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						},
+						"description": "# Request - **Refresh Token**\n\n### method - **post**\n\ndesc-\n\nregister krne ke bad jo hame refresh token milege usko hum yha use krenge.\n\nrequest body\n\n{\n\n\"refresh_token\": \"refresh token use krna hai yhan jo hame register krne se mili hai.\"\n\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E1NGZlMzJlMDQ2NTJmOWI4MjZlYzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2NzE3Nzg5MzYsImV4cCI6MTY3MTc3ODk5Nn0.u2Mi4BwBOP885RF4to8Jylf7hevNcSJruDnLTJgEfvE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2E1NGZlMzJlMDQ2NTJmOWI4MjZlYzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2NzE3Nzg5MzYsImV4cCI6MTcwMzMzNjUzNn0.uXu65FDBgiMgfRUrPyQvMxgEYintdtOffarVXtqmVkM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create a Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2EzZjYyYjI4NmY1YjVhOGMwOTU2MDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzIwNTc1NzksImV4cCI6MTY3MjA1NzYzOX0.HPakIJkVCwmKtoBQIfcP6PNwf5TlHA5vDby5CGqts-s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "pizza-2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "3000",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/pizza images/american-gbedb093d6_1920.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "# How to save the new product?\n\nbody > form-data >\n\nkey : value set krna hai.\n\nname: Margarita\n\nprice: 300, ( Indian currency Dena hain )\n\nsize: L ( M, S, R, L, etc... )\n\nimage: upload image ( select type - file )\n\nnote: image size should be less then 5mb.\n\n### before sending the request, user need to login and paste here the token in the header section of this api.\n\n#### if user is admin then he/she can create a product other he/she will receive anuthorise as a response.\n\n# Send"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2EzZjYyYjI4NmY1YjVhOGMwOTU2MDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzIwNTc3NjIsImV4cCI6MTY3MjA1NzgyMn0.EBvpebLbzqBoY6XJCtOBUtJU257LNYcbEqfWIyhX6Z4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "margarita2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "4000",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "L",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/products/63a99316993248c7bdde07f0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"63a99316993248c7bdde07f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2EzZjYyYjI4NmY1YjVhOGMwOTU2MDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzIwNTc4NzgsImV4cCI6MTY3MjA1NzkzOH0._7L0AWmQw9BmnE4g5WL-n2C11Y5bvIJumTxMrXe062k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/products/63a99323993248c7bdde07f6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"63a99323993248c7bdde07f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products/63a99303993248c7bdde07ed",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"63a99303993248c7bdde07ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
